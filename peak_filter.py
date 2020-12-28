@@ -1,9 +1,6 @@
 import mean_filter_2D
-import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-import show_2d_mean_gray_figure
-import show_3D_dark_corner
 
 
 def remove_peak_of_img(src_img, filter_img):

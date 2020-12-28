@@ -1,7 +1,5 @@
 import cv2
 import numpy as np
-from show_3D_dark_corner import show_3d_dark_corner
-from show_2d_mean_gray_figure import Show2DMeanGrayFigure
 
 
 def filter_2d_mean(kernel_size, img_path_or_img):
