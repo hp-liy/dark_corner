@@ -5,6 +5,12 @@ from show_2d_mean_gray_figure import Show2DMeanGrayFigure
 
 
 def filter_2d_mean(kernel_size, img_path_or_img):
+    """
+    对原图进行均值滤波，采用的是cv2中自定义滤波方法
+    :param kernel_size: 滤波器的size
+    :param img_path_or_img: 两种选择：图片路径或者图片
+    :return: 滤波后的图片
+    """
     if isinstance(img_path_or_img, str):
         src = cv2.imread(img_path_or_img, 0)
     else:

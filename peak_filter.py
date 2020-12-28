@@ -7,6 +7,13 @@ import show_3D_dark_corner
 
 
 def remove_peak_of_img(src_img, filter_img):
+    """
+    去除原图中的异常值，采用的思想是hample滤波方法。把之前均值滤波后的图与原图做差，差值超过指定阈值后，就把滤波后的值赋值给原图。
+
+    :param src_img: 原图
+    :param filter_img: 均值滤波后的图
+    :return: 去掉异常值后的图
+    """
     removed_peak_img = src_img.copy()
     for row in range(src_img.shape[0]):
         for col in range(src_img.shape[1]):
@@ -20,6 +27,13 @@ def remove_peak_of_img(src_img, filter_img):
 
 
 def residual_hist(src_img, filter_img):
+    """
+    该函数的目的是用直方图的形式选择差值范围。确定阈值
+
+    :param src_img: 原图
+    :param filter_img: 均值滤波后的图
+    :return: None
+    """
     residual_count = []
     for row in range(src_img.shape[0]):
         for col in range(src_img.shape[1]):

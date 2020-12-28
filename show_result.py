@@ -34,29 +34,15 @@ def show_result(image_path, model_path, correct_matrix):
     plt.figure(figsize=(10, 10))
 
     for i in range(len(test_src_img_list)):
-        plt.imshow(test_src_img[i], cmap='gray')
-        plt.xticks([])
-        plt.yticks([])
-        plt.title("src"+str(i))
-        plt.savefig(
-            model_path+"\\result\\"+"model1"+str(i)
-            + "src_img.png")
-        plt.close()
 
-        plt.imshow(test_dst_img[i], cmap='gray')
-        plt.xticks([])
-        plt.yticks([])
-        plt.title("dst"+str(i))
-        plt.savefig(model_path+"\\result\\"+"model1"+str(i)
-            + "dst_img.png")
-        plt.close()
+        cv2.imwrite(model_path+"\\result\\"+"model1"+str(i)
+            + "src_img.png", test_src_img[i])
+        cv2.imwrite(model_path+"\\result\\"+"model1"+str(i)
+            + "dst_img.png",test_dst_img[i])
 
         show_2d_figure = show_2d_mean_gray_figure.Show2DMeanGrayFigure(test_src_img[i], test_dst_img[i])
         show_2d_figure.show_figure_for_src_and_dst_img(model_path+"\\result\\"+"model1"+str(i)
              + ".png")
-
-    plt.savefig(model_path+"\\result\\compare_img.png")
-    plt.close()
 
 
 if __name__ == "__main__":
