@@ -33,7 +33,7 @@ class FitEllipse(object):
         zm = np.mean(self.img.flatten())
         # 最小二乘拟合椭球。leastsq（损失函数，参数，除参数外的其他输入）
         tparas = leastsq(_ellipse_func_error, np.array([xm, ym, zm, 10, 10, 10]),
-                         args=(self.x, self.y, self.img), maxfev=500000)
+                         args=(self.x, self.y, self.img))
         paras = tparas[0]
 
         ellipse_img = np.sqrt((1-((self.x - paras[0])/paras[3]) ** 2 - ((self.y - paras[1])/paras[4]) ** 2 ))* paras[5]+paras[2]
